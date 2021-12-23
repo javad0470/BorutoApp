@@ -1,6 +1,7 @@
 package com.example.borutoapp
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.material.MaterialTheme
@@ -23,10 +24,11 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             BorutoAppTheme {
-                navHostController = rememberNavController()
+                 navHostController = rememberNavController()
 
                 SetupNavGraph(navController = navHostController)
             }
         }
     }
+
 }

@@ -7,7 +7,9 @@ import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
+import com.example.borutoapp.presentation.details.DetailsScreen
 import com.example.borutoapp.presentation.screens.home.HomeScreen
+import com.example.borutoapp.presentation.screens.search.SearchScreen
 import com.example.borutoapp.presentation.screens.splash.SplashScreen
 import com.example.borutoapp.presentation.screens.welcome.WelcomeScreen
 import com.example.borutoapp.util.Constants.DETAILS_ARGUMENT_KEY
@@ -28,26 +30,34 @@ fun SetupNavGraph(
         ) {
             SplashScreen(navController = navController)
         }
+
         composable(
             route = Screen.Welcome.route
         ) {
             WelcomeScreen(navController = navController)
         }
+
         composable(
             route = Screen.Home.route
         ) {
-            HomeScreen()
+            HomeScreen(navController = navController)
         }
+
         composable(
             route = Screen.Details.route,
             arguments = listOf(navArgument(name = DETAILS_ARGUMENT_KEY) {
                 type = NavType.IntType
             })
         ) {
+            DetailsScreen(navController = navController)
         }
+
         composable(
             route = Screen.Search.route
         ) {
+            SearchScreen(
+                navController = navController
+            )
         }
     }
 }

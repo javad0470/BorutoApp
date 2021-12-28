@@ -10,13 +10,14 @@ import kotlinx.serialization.Serializable
 data class Hero(
     @PrimaryKey(autoGenerate = false)
     val id: Int,
-    val name: String,
-    val about: String,
-    val rating: Double,
-    val power: Int,
-    val month: String,
-    val day: String,
-    val family: List<String>,
-    val abilities: List<String>,
-    val natureTypes: List<String>,
+    var name: String,
+    var image: String,
+    var about: String,
+    var rating: Double,
+    var power: Int,
+    var month: String,
+    var day: String,
+    var family: List<String>,
+    var abilities: List<String>,
+    var natureTypes: List<String>,
 )
